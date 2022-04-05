@@ -1,4 +1,3 @@
-
 import os
 import time
 import random
@@ -11,7 +10,7 @@ def sleep():
 def back_to_start():
   pass
 
-def back_to_shop():
+def back_to_shop(inventory_value, attack, money, armor):
   clear()
   choice = 0
   print("Welcome to the shop!")
@@ -31,7 +30,7 @@ def back_to_shop():
         inventory_value = 0
         print("Thanks!")
         sleep()
-        back_to_shop()
+        back_to_shop(inventory_value, attack, money)
   if choice == 2:
       choice = 0
       clear()
@@ -50,12 +49,12 @@ def back_to_shop():
             print("Here you go!")
             money = money - 2
             attack = attack + 3
-            back_to_shop()
+            back_to_shop(inventory_value, attack, money, armor)
           else:
             print("Sorry you do not have enough money!")
             sleep()
             sleep()
-            back_to_shop()
+            back_to_shop(inventory_value, attack, money, armor)
       if choice == 2:
         choice = 0
         print("Price = £15")
@@ -64,12 +63,12 @@ def back_to_shop():
         if choice == "y":
           if money >= 10:
             print("Here you go!")
-            attack = atack + 10
+            attack = attack + 10
             sleep()
-            back_to_shop()
+            back_to_shop(inventory_value, attack, money, armor)
           else:
             print("Not enough money!")
-            back_to_shop()
+            back_to_shop(inventory_value, attack, money, armor)
       if choice == 3:
         print("Price = £25")
         choice = input("Would you like to buy, y or n? ")
@@ -78,9 +77,9 @@ def back_to_shop():
             print("Here ya go, mate!")
             attack = attack + 25
             sleep()
-            back_to_shop()
+            back_to_shop(inventory_value, attack, money, armor)
       if choice == 4:
-        back_to_shop()
+        back_to_shop(inventory_value, attack, money, armor)
   if choice == 1:
       clear()
       choice = 0
@@ -99,12 +98,12 @@ def back_to_shop():
             print("Here you go!")
             money -= 5
             armor = armor + 5
-            back_to_shop()
+            back_to_shop(inventory_value, attack, money, armor, armor)
           else:
             print("Sorry you do not have enough money!")
             sleep()
             sleep()
-            back_to_shop()
+            back_to_shop(inventory_value, attack, money, armor, armor)
       if choice == 2:
         print("Price = £20")
         print("Would you like to buy?")
@@ -114,12 +113,12 @@ def back_to_shop():
             print("Here you go!")
             money -= 20
             armor = armor + 10
-            back_to_shop()
+            back_to_shop(inventory_value, attack, money, armor)
           else:
             print("Sorry you do not have enough money!")
             sleep()
             sleep()
-            back_to_shop()
+            back_to_shop(inventory_value, attack, money, armor)
       if choice == 3:
         print("Price = £40")
         print("Would you like to buy?")
@@ -129,19 +128,19 @@ def back_to_shop():
             print("Here you go!")
             money -= 40
             armor = armor + 25
-            back_to_shop()
+            back_to_shop(inventory_value, attack, money, armor)
           else:
             print("Sorry you do not have enough money!")
             sleep()
             sleep()
-            back_to_shop()
+            back_to_shop(inventory_value, attack, money, armor)
       if choice == 4:
         print("BYE!")
         sleep()
-        back_to_shop()
+        back_to_shop(inventory_value, attack, money, armor)
 
 
-health = 50
+health = 25
 attack = 5
 armor = 5
 money = 10
@@ -191,7 +190,7 @@ while start == "y":
         inventory_value = 0
         print("Thanks!")
         sleep()
-        back_to_shop()
+        back_to_shop(inventory_value, attack, money, armor)
     if choice == 2:
       choice = 0
       print("Welcome to the weapon shop, mate!")
@@ -209,27 +208,27 @@ while start == "y":
             print("Here you go!")
             money = money - 2
             attack = attack + 5
-            back_to_shop()
+            back_to_shop(inventory_value, attack, money, armor)
           else:
             print("Sorry you do not have enough money!")
             sleep()
             sleep()
-            back_to_shop()
+            back_to_shop(inventory_value, attack, money, armor)
       if choice == 2:
         choice = 0
         print("Price = £15")
         print("Do you want to purchase?")
         choice = input("y or n ")
         if choice == "y":
-          if money >= 10:
+          if money >= 15:
             print("Here you go!")
             money = money - 15
-            attack = atack + 10
+            attack = attack + 10
             sleep()
-            back_to_shop()
+            back_to_shop(inventory_value, attack, money, armor)
           else:
             print("Not enough money!")
-            back_to_shop()
+            back_to_shop(inventory_value, attack, money, armor)
       if choice == 3:
         print("Price = £25")
         choice = input("Would you like to buy, y or n? ")
@@ -239,9 +238,9 @@ while start == "y":
             money = money - 25
             attack = attack + 25
             sleep()
-            back_to_shop()
+            back_to_shop(inventory_value, attack, money, armor)
       if choice == 4:
-        back_to_shop()
+        back_to_shop(inventory_value, attack, money, armor)
     if choice == 1:
       clear()
       choice = 0
@@ -260,12 +259,12 @@ while start == "y":
             print("Here you go!")
             money = money - 5
             armor = armor + 5
-            back_to_shop()
+            back_to_shop(inventory_value, attack, money, armor)
           else:
             print("Sorry you do not have enough money!")
             sleep()
             sleep()
-            back_to_shop()
+            back_to_shop(inventory_value, attack, money, armor)
       if choice == 2:
         print("Price = £20")
         print("Would you like to buy?")
@@ -275,12 +274,12 @@ while start == "y":
             print("Here you go!")
             money = money - 20
             armor = armor + 10
-            back_to_shop()
+            back_to_shop(inventory_value, attack, money, armor)
           else:
             print("Sorry you do not have enough money!")
             sleep()
             sleep()
-            back_to_shop()
+            back_to_shop(inventory_value, attack, money, armor)
       if choice == 3:
         print("Price = £40")
         print("Would you like to buy?")
@@ -290,16 +289,16 @@ while start == "y":
             print("Here you go!")
             money = money - 40
             armor = armor + 25
-            back_to_shop()
+            back_to_shop(inventory_value, attack, money, armor)
           else:
             print("Sorry you do not have enough money!")
             sleep()
             sleep()
-            back_to_shop()
+            back_to_shop(inventory_value, attack, money, armor)
       if choice == 4:
         print("BYE!")
         sleep()
-        back_to_shop()
+        back_to_shop(inventory_value, attack, money, armor)
 
   if choice == 2:
     clear()
@@ -324,6 +323,7 @@ while start == "y":
           while battle == True:
             clear()
             e_damage = random.randint(10, 60)
+            print("You have",health,"health!")
             print("1 = ATTACK")
             print("2 = SKIP TURN")
             print("3 = LEAVE(SCARDEY CAT)")
@@ -340,7 +340,7 @@ while start == "y":
                 sleep()
                 choice_enter = False
                 battle = False
-                health = 100
+                health = 25
                 level_exp = level_exp + random.randint(10,20)
                 inventory_value = inventory_value + worth
                 pass
